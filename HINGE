@@ -1,0 +1,51 @@
+from goto import with_goto
+
+from PyQt4.QtCore import QString
+
+def getxyf():
+ 
+     self.x  = float() 
+     self.xp = float()
+     self.y  = float()
+     self.yp = float()
+     self.s  = float()
+     self.xf = float()
+     self.n  = int()
+     self.tops = float()
+     self.bots = float ()
+     self.yf   = float ()
+     self.topy = float () 
+     self.boty  = float ()
+     self.yrel  = float ()
+     self.topsurfacey = float()
+#----    self.'y/t' = float()
+     self.bottomsurfacey = float()
+#----     y/t = 0.0
+    
+if(xf <= -999.0) :   
+        f.write  ("enter flap hinge x location","xf")
+        xf = 0.5#arcs added
+    
+    #---- find top and bottom y at hinge x location
+tops = s[1] + (x[1] - xf)
+bots = s[n] - (x[n] - xf)
+sinvrt(tops,xf,x,xp,s,n)
+sinvrt(bots,xf,x,xp,s,n)
+topy = seval(tops,y,yp,s,n)
+boty = seval(bots,y,yp,s,n)
+    
+f.write("\n 1000", topy, boty)
+if( pyf <= -999.0):
+        f.write( 'enter flap hinge y location (or 999 to specify y/t)^',yf)
+pyf=0.0#arcs added
+    
+if(pyf >= 999.0) :
+        f.write("enter flap hinge relative y/t location",yrel)
+yrel = 0.5#arcs added
+    
+       # flap y location in pyf is relative
+yrel = yf
+    #so convert to absolute value
+yf = topy*yrel + boty*(1.0-yrel)
+
+return True
